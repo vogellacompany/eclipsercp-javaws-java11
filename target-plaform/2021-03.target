@@ -14,7 +14,7 @@
 			<unit id="org.junit.jupiter.params" version="0.0.0"/>
 			<unit id="org.junit.jupiter.migrationsupport" version="0.0.0"/>
 		</location>
-		<location includeDependencyScope="compile" missingManifest="generate" type="Maven">
+		<location includeDependencyScope="compile" includeSource="true" missingManifest="generate" type="Maven">
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
 			<version>3.0.1</version>

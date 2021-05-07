@@ -131,6 +131,7 @@
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
         <setEntry value="com.example.rcpclient@default:default"/>
+        <setEntry value="fragment-jakarta.xml@default:default"/>
         <setEntry value="ws-fragment@default:false"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>

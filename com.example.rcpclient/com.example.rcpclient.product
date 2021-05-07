@@ -21,6 +21,7 @@
       <plugin id="com.sun.jna.platform"/>
       <plugin id="com.sun.xml.messaging.saaj.impl"/>
       <plugin id="com.sun.xml.ws.jaxws-rt"/>
+      <plugin id="fragment-jakarta.xml" fragment="true"/>
       <plugin id="jakarta.annotation-api"/>
       <plugin id="jakarta.jws-api"/>
       <plugin id="jakarta.xml.bind-api"/>

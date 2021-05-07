@@ -6,4 +6,6 @@ Bundle-Version: 1.0.0.qualifier
 Fragment-Host: jakarta.xml.ws-api;bundle-version="3.0.1"
 Automatic-Module-Name: ws.fragment
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Import-Package: com.sun.xml.ws.spi;version="3.0.1"
+Import-Package: com.sun.xml.messaging.saaj.soap;version="2.0.1",
+ com.sun.xml.ws.api;version="3.0.1",
+ com.sun.xml.ws.spi;version="3.0.1"
