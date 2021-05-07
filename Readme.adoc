@@ -1,0 +1,25 @@
+Eclipse RCP example for defining a Java webservice in OSGi
+
+== Test setup:
+
+- Install the m2e - PDE extension
+- import existing projects except "com.example.maven"
+- activate the target platform from the target-platform folder
+
+Start product via the prepared launch configuration com.example.rcpclient.product.launch
+
+Select the "About" menu item from the menu.
+
+== Solved Issues:
+
+Fixed: Caused by: java.lang.ClassNotFoundException: com.sun.xml.ws.spi.ProviderImpl via an fragment which adds an package import com.sun.xml.ws.spi to the jakarta.xml.ws-api plug-in.
+
+== Open issues:
+
+Currently not working with the error:
+
+Caused by: jakarta.xml.soap.SOAPException: Unable to create SAAJ meta-factory: Provider com.sun.xml.internal.messaging.saaj.soap.SAAJMetaFactoryImpl not found
+	at jakarta.xml.soap.SAAJMetaFactory.getInstance(SAAJMetaFactory.java:82)
+	at jakarta.xml.soap.MessageFactory.newInstance(MessageFactory.java:120)
+	at com.sun.xml.ws.api.SOAPVersion.<init>(SOAPVersion.java:162)
+	... 43 more
