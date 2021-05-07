@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ws-fragment
+Bundle-SymbolicName: ws-fragment
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: jakarta.xml.ws-api;bundle-version="3.0.1"
+Automatic-Module-Name: ws.fragment
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: com.sun.xml.ws.spi;version="3.0.1"
