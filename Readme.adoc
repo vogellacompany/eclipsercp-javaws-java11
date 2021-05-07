@@ -12,14 +12,36 @@ Select the "About" menu item from the menu.
 
 == Solved Issues:
 
-Fixed: Caused by: java.lang.ClassNotFoundException: com.sun.xml.ws.spi.ProviderImpl via an fragment which adds an package import com.sun.xml.ws.spi to the jakarta.xml.ws-api plug-in.
+=== java.lang.ClassNotFoundException: com.sun.xml.ws.spi.ProviderImpl 
 
-== Open issues:
+Fixed: Caused by: java.lang.ClassNotFoundException: com.sun.xml.ws.spi.ProviderImpl 
+Solution: an fragment which adds an package import com.sun.xml.ws.spi to the jakarta.xml.ws-api plug-in.
 
-Currently not working with the error:
-
+Fixed: 
 Caused by: jakarta.xml.soap.SOAPException: Unable to create SAAJ meta-factory: Provider com.sun.xml.internal.messaging.saaj.soap.SAAJMetaFactoryImpl not found
 	at jakarta.xml.soap.SAAJMetaFactory.getInstance(SAAJMetaFactory.java:82)
 	at jakarta.xml.soap.MessageFactory.newInstance(MessageFactory.java:120)
 	at com.sun.xml.ws.api.SOAPVersion.<init>(SOAPVersion.java:162)
 	... 43 more
+Solution: Fragment 
+
+Fragment-Host: jakarta.xml.soap-api;bundle-version="2.0.1"
+Automatic-Module-Name: fragment.jakarta.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: com.sun.xml.messaging.saaj.soap;version="2.0.1"
+
+
+== Open issues:
+
+JaxB Configuration muss noch gemacht werden, siehe http://blog.vogella.com/2021/03/08/eclipse-rcp-java-11-jaxb/
+
+Caused by: jakarta.xml.bind.JAXBException: return is not a valid property on class com.example.rcpclient.handlers.jaxws.SayHelloResponse
+	at org.glassfish.jaxb.runtime.v2.runtime.JAXBContextImpl.getElementPropertyAccessor(JAXBContextImpl.java:908)
+	at com.sun.xml.ws.db.glassfish.JAXBRIContextWrapper.getElementPropertyAccessor(JAXBRIContextWrapper.java:91)
+	at com.sun.xml.ws.server.sei.EndpointResponseMessageBuilder$DocLit.<init>(EndpointResponseMessageBuilder.java:228)
+	... 54 more
+	
+	
+	
+
+	
