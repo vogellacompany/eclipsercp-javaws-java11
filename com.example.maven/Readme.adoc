@@ -1,0 +1,4 @@
+= Standalone (non OSGi) Maven project
+
+This is used to test if the webservice works on a regular Java runtime and to see the involved libraries.
+This is not used in the OSGi example.
