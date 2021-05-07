@@ -29,6 +29,7 @@
       <plugin id="jakarta.xml.ws-api"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
+      <plugin id="jaxb.impl.binding" fragment="true"/>
       <plugin id="org.apache.batik.constants"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.i18n"/>
