@@ -3,6 +3,8 @@ package com.example.rcpclient.handlers;
 import org.eclipse.e4.core.di.annotations.Execute;
 import org.eclipse.swt.widgets.Shell;
 
+import com.example.rcpclient.webservice.WebServiceExample;
+
 import jakarta.xml.ws.Endpoint;
 
 public class AboutHandler {

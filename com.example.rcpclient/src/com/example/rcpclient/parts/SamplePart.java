@@ -2,6 +2,7 @@ package com.example.rcpclient.parts;
 
 import java.util.Arrays;
 import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -15,6 +16,10 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
+
+import com.example.rcpclient.webservice.WebServiceExample;
+
+import jakarta.xml.ws.Endpoint;
 
 public class SamplePart {
 
@@ -37,6 +42,11 @@ public class SamplePart {
 		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
 		tableViewer.setInput(createInitialDataModel());
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
+		// starting a webservice
+		System.setProperty("jakarta.xml.soap.SAAJMetaFactory", "com.sun.xml.messaging.saaj.soap.SAAJMetaFactoryImpl");
+		String url = "http://localhost:4434/miniwebservice";
+		Endpoint.publish(url, new WebServiceExample());
+		
 	}
 
 	@Focus

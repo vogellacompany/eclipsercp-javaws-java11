@@ -1,4 +1,4 @@
-package com.example.rcpclient.handlers;
+package com.example.rcpclient.webservice;
 
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebService;
