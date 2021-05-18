@@ -42,7 +42,7 @@ public class SamplePart {
 		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
 		tableViewer.setInput(createInitialDataModel());
 		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
-		// starting a webservice
+			// starting a webservice
 		System.setProperty("jakarta.xml.soap.SAAJMetaFactory", "com.sun.xml.messaging.saaj.soap.SAAJMetaFactoryImpl");
 		String url = "http://localhost:4434/miniwebservice";
 		Endpoint.publish(url, new WebServiceExample());
