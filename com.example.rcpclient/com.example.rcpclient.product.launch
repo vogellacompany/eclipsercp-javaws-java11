@@ -19,7 +19,7 @@
     <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -clearPersistedState"/>
     <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
-    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dorg.eclipse.swt.graphics.Resource.reportNonDisposed=true -Djavax.xml.ws.spi.Provider=com.sun.xml.ws.spi.ProviderImpl"/>
     <stringAttribute key="pde.version" value="3.3"/>
     <stringAttribute key="product" value="com.example.rcpclient.product"/>
     <stringAttribute key="productFile" value="/com.example.rcpclient/com.example.rcpclient.product"/>
@@ -29,12 +29,12 @@
         <setEntry value="com.sun.activation.jakarta.activation@default:default"/>
         <setEntry value="com.sun.jna.platform@default:default"/>
         <setEntry value="com.sun.jna@default:default"/>
-        <setEntry value="com.sun.xml.bind.jaxb-core@default:default"/>
         <setEntry value="com.sun.xml.bind.jaxb-impl@default:default"/>
         <setEntry value="com.sun.xml.fastinfoset.FastInfoset@default:default"/>
         <setEntry value="com.sun.xml.messaging.saaj.impl@default:default"/>
         <setEntry value="com.sun.xml.stream.buffer.streambuffer@default:default"/>
         <setEntry value="com.sun.xml.ws.jaxws-rt@default:default"/>
+        <setEntry value="com.sun.xml.ws.policy@default:default"/>
         <setEntry value="jakarta.annotation-api@default:default"/>
         <setEntry value="jakarta.jws-api@default:default"/>
         <setEntry value="jakarta.xml.bind-api@default:default"/>
@@ -50,6 +50,7 @@
         <setEntry value="org.apache.commons.io@default:default"/>
         <setEntry value="org.apache.commons.jxpath@default:default"/>
         <setEntry value="org.apache.commons.logging@default:default"/>
+        <setEntry value="org.apache.felix.gogo.runtime@default:default"/>
         <setEntry value="org.apache.felix.scr@1:true"/>
         <setEntry value="org.apache.xmlgraphics@default:default"/>
         <setEntry value="org.eclipse.ant.core@default:default"/>
@@ -132,7 +133,7 @@
     <setAttribute key="selected_workspace_bundles">
         <setEntry value="com.example.rcpclient@default:default"/>
         <setEntry value="fragment-jakarta.xml@default:false"/>
-        <setEntry value="jaxb.impl.binding@default:default"/>
+        <setEntry value="jaxb.impl.binding@default:false"/>
         <setEntry value="ws-fragment@default:false"/>
     </setAttribute>
     <booleanAttribute key="show_selected_only" value="false"/>

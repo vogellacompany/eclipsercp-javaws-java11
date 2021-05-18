@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Xml
 Bundle-SymbolicName: fragment-jakarta.xml
 Bundle-Version: 1.0.0.qualifier
-Fragment-Host: jakarta.xml.soap-api;bundle-version="2.0.1"
+Fragment-Host: jakarta.xml.soap-api;bundle-version="1.4.2"
 Automatic-Module-Name: fragment.jakarta.xml
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Import-Package: com.sun.xml.messaging.saaj.soap;version="2.0.1"
+Import-Package: com.sun.xml.messaging.saaj.soap;version="1.5.3",
+ com.sun.xml.ws.runtime.config;version="2.3.4"

@@ -11,19 +11,17 @@ import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.widgets.LabelFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
 import com.example.rcpclient.webservice.WebServiceExample;
 
-import jakarta.xml.ws.Endpoint;
-
 public class SamplePart {
-
-	private TableViewer tableViewer;
 
 	@Inject
 	private MPart part;
@@ -31,35 +29,20 @@ public class SamplePart {
 	@PostConstruct
 	public void createComposite(Composite parent) {
 		parent.setLayout(new GridLayout(1, false));
-
-		Text txtInput = new Text(parent, SWT.BORDER);
-		txtInput.setMessage("Enter text to mark part as dirty");
-		txtInput.addModifyListener(e -> part.setDirty(true));
-		txtInput.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
-
-		tableViewer = new TableViewer(parent);
-
-		tableViewer.setContentProvider(ArrayContentProvider.getInstance());
-		tableViewer.setInput(createInitialDataModel());
-		tableViewer.getTable().setLayoutData(new GridData(GridData.FILL_BOTH));
-			// starting a webservice
+		// starting a webservice
 		System.setProperty("jakarta.xml.soap.SAAJMetaFactory", "com.sun.xml.messaging.saaj.soap.SAAJMetaFactoryImpl");
-		String url = "http://localhost:4434/miniwebservice";
-		Endpoint.publish(url, new WebServiceExample());
-		
+		System.setProperty("javax.xml.soap.SAAJMetaFactory", "com.sun.xml.messaging.saaj.soap.SAAJMetaFactoryImpl");
+		String url = "http://localhost:4428/miniwebservice";
+
+		ClassLoader tccl = Thread.currentThread().getContextClassLoader();
+		Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
+		try {
+			javax.xml.ws.Endpoint.publish(url, new WebServiceExample());
+		} finally {
+			Thread.currentThread().setContextClassLoader(tccl);
+		}
+
+		Label create = LabelFactory.newLabel(SWT.NONE).text("Running service at " + url).create(parent);
 	}
 
-	@Focus
-	public void setFocus() {
-		tableViewer.getTable().setFocus();
-	}
-
-	@Persist
-	public void save() {
-		part.setDirty(false);
-	}
-	
-	private List<String> createInitialDataModel() {
-		return Arrays.asList("Sample item 1", "Sample item 2", "Sample item 3", "Sample item 4", "Sample item 5");
-	}
 }

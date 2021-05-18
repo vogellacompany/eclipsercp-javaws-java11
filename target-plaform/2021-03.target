@@ -7,17 +7,13 @@
 			<repository location="http://download.eclipse.org/releases/2021-03"/>
 			<unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
 			<unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
-			<unit id="org.junit.jupiter.api" version="0.0.0"/>
-			<unit id="org.junit.jupiter.engine" version="0.0.0"/>
-			<unit id="org.junit" version="0.0.0"/>
-			<unit id="org.junit.jupiter.engine" version="0.0.0"/>
-			<unit id="org.junit.jupiter.params" version="0.0.0"/>
-			<unit id="org.junit.jupiter.migrationsupport" version="0.0.0"/>
 		</location>
 		<location includeDependencyScope="compile" includeSource="true" missingManifest="generate" type="Maven">
-			<groupId>com.sun.xml.ws</groupId>
-			<artifactId>jaxws-rt</artifactId>
-			<version>3.0.1</version>
+			<dependency>
+				<groupId>com.sun.xml.ws</groupId>
+				<artifactId>jaxws-rt</artifactId>
+				<version>2.3.4</version>
+			</dependency>
 			<type>jar</type>
 		</location>
 	</locations>

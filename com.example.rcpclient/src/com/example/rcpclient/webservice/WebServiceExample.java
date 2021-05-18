@@ -1,8 +1,7 @@
 package com.example.rcpclient.webservice;
 
-import jakarta.jws.WebMethod;
-import jakarta.jws.WebService;
-import jakarta.xml.ws.Endpoint;
+import javax.jws.WebMethod;
+import javax.jws.WebService;
 
 @WebService
 public class WebServiceExample {
